@@ -16,12 +16,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
-        <jars_libs_folder>C:/Progetti/Minecraft/Spigot/_jars</jars_libs_folder>
+        <jars_libs_folder>E:/GitHub/Libs</jars_libs_folder>
     </properties>
 
     <modules>
         <module>VanillaCustomizer-core</module>
         <module>VanillaCustomizer-jar</module>
+        <module>VanillaCustomizer-nms-v1_21_3</module>
         <module>VanillaCustomizer-nms-v1_21_1</module>
         <module>VanillaCustomizer-nms-v1_20_6</module>
         <module>VanillaCustomizer-nms-v1_20_R3</module>
@@ -46,7 +47,7 @@
             <extension>
                 <groupId>org.apache.maven.extensions</groupId>
                 <artifactId>maven-build-cache-extension</artifactId>
-                <version>1.0.1-SNAPSHOT-unofficial-1.0.0</version>
+                <version>1.2.0</version>
             </extension>
             <extension>
                 <groupId>co.leantechniques</groupId>

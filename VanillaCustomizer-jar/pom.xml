@@ -87,6 +87,11 @@
 
         <dependency>
             <groupId>dev.lone</groupId>
+            <artifactId>VanillaCustomizer-nms-v1_21_3</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.lone</groupId>
             <artifactId>VanillaCustomizer-nms-v1_21_1</artifactId>
             <version>1.0</version>
         </dependency>

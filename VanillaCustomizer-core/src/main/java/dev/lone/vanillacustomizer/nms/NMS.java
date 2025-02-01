@@ -1,7 +1,6 @@
 package dev.lone.vanillacustomizer.nms;
 
 import org.jetbrains.annotations.Nullable;
-import dev.lone.LoneLibs.nbt.nbtapi.utils.MinecraftVersion;
 import dev.lone.vanillacustomizer.Main;
 import lonelibs.dev.lone.fastnbt.nms.Version;
 import org.bukkit.Bukkit;

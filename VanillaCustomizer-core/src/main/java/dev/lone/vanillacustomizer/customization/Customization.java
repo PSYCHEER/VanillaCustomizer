@@ -54,7 +54,7 @@ public class Customization
 
             for (String wildcard : ignoreInventoriesByTitle)
             {
-                if (FilenameUtils.wildcardMatch(openInventory.getTitle(), wildcard))
+                if (FilenameUtils.wildcardMatch(openInventory.getTopInventory().getType().name(), wildcard))
                     return false;
             }
         }

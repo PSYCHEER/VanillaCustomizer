@@ -5,11 +5,6 @@ import com.google.common.collect.Multimap;
 import dev.lone.vanillacustomizer.ChangeSession;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
-import org.bukkit.inventory.EquipmentSlot;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.UUID;
 
 @Deprecated //TODO implement this shit
 public class AttributesRemove implements IChange

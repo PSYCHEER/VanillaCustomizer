@@ -3,6 +3,7 @@ package dev.lone.vanillacustomizer;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import dev.lone.vanillacustomizer.exception.InvalidCustomizationPropertyException;
+import org.bukkit.GameMode;
 import org.jetbrains.annotations.Nullable;
 import dev.lone.vanillacustomizer.api.VanillaCustomizerApi;
 import dev.lone.vanillacustomizer.commands.registered.MainCommand;
@@ -13,7 +14,6 @@ import dev.lone.vanillacustomizer.customization.rules.*;
 import dev.lone.vanillacustomizer.nms.items.Rarity;
 import dev.lone.vanillacustomizer.utils.*;
 import org.apache.commons.io.FileUtils;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
@@ -24,6 +24,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 
 import java.io.File;
 import java.util.*;
@@ -480,7 +483,7 @@ public class Customizations
 
     public void handle(ItemStack itemStack, Player player)
     {
-        if (itemStack == null || itemStack.getType() == Material.AIR)
+        if (itemStack == null || itemStack.getType() == Material.AIR || player.getGameMode() == GameMode.CREATIVE)
             return;
 
         boolean trackChanges = MainCommand.hasDebugTag(player);
@@ -501,9 +504,9 @@ public class Customizations
         if(trackChanges && session.hasChanged())
         {
             // TODO make it configurable
-            LoreInsert.putLine(session, 0, ChatColor.GOLD + SmallCaps.apply("VANILLACUSTOMIZER"));
+            LoreInsert.putLine(session, 0, LegacyComponentSerializer.legacySection().serialize(Component.text(SmallCaps.apply("VANILLACUSTOMIZER")).color(TextColor.color(0xFFAA00))));
             //noinspection DataFlowIssue
-            if(session.refreshMeta().getLore().size() > 1)
+            if(session.refreshMeta().getPersistentDataContainer().getKeys().size() > 1)
                 LoreInsert.putLine(session, 1, " ");
         }
     }

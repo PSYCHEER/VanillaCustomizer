@@ -22,6 +22,7 @@
     <modules>
         <module>VanillaCustomizer-core</module>
         <module>VanillaCustomizer-jar</module>
+        <module>VanillaCustomizer-nms-v1_21_4</module>
         <module>VanillaCustomizer-nms-v1_21_3</module>
         <module>VanillaCustomizer-nms-v1_21_1</module>
         <module>VanillaCustomizer-nms-v1_20_6</module>

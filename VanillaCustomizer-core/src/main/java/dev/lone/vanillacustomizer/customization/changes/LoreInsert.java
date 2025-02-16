@@ -45,14 +45,14 @@ public class LoreInsert implements IChange
                     int i = index;
                     for (String line : lines)
                     {
-                        loreNMS.add(i, Utils.legacyToNMS(IChange.replacePlaceholders(session, line)));
+                        loreNMS.add(i, Utils.jsonToNMS(IChange.replacePlaceholders(session, line)));
                         i++;
                     }
                 }
                 else // If it's out of bounds I just append at the end.
                 {
                     for (String line : lines)
-                        loreNMS.add(Comp.legacyToJson(IChange.replacePlaceholders(session, line)));
+                        loreNMS.add(Utils.jsonToNMS(IChange.replacePlaceholders(session, line)));
                 }
             }
 
@@ -101,11 +101,11 @@ public class LoreInsert implements IChange
             if (loreNMS == null)
             {
                 loreNMS = new ArrayList<>();
-                loreNMS.add(Utils.legacyToNMS(line));
+                loreNMS.add(Utils.jsonToNMS(line));
             }
             else
             {
-                loreNMS.add(index, Utils.legacyToNMS(line));
+                loreNMS.add(index, Utils.jsonToNMS(line));
             }
 
             nbt.setLore(loreNMS);
